@@ -3,12 +3,14 @@ load 'read_data.rb'
 
 class ItemsPrice
 
- def calculate_price(items=nil)
+
+  def calculate_price(items=nil)
    sale_unit_price = ReadData.sale_price
    price_after_applying_sale_price = CalculateSalePrice.apply_sale_price_on_each_item(items,sale_unit_price)  # check that we need to apply the sale price for items
    price = compute_total_price(items,price_after_applying_sale_price)
    price
  end
+
 
  private
 
